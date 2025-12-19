@@ -70,6 +70,6 @@
 | Assignment | Due Date | Description | Link |
 | :---: | :---: | :--- | :--- |
 | **HW 1** | 03/12/68 | Copy file | [png](https://github.com/Meaiie/AIPrototype25/blob/main/HW1.png) |
-| **HW 2** | 20/12/68 | Update Lecture on GitHub |--|
+| **HW 2** | 20/12/68 | Update Lecture on GitHub |:--:|
 
 ---
