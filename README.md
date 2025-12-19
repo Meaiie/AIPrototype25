@@ -4,11 +4,10 @@ SC664401	Prototyping for Artificial Intelligence and Machine Learning System
 
 การสร้างต้นแบบสำหรับระบบปัญญาประดิษฐ์และการเรียนรู้ของเครื่อง
 
-Git by
-
-Siriyaporn Rosjan 653020218-2 SIDS 
-
-<siriyaporn.r@kkumail.com>
+Git by Siriyaporn Rosjan 653020218-2 SIDS <br>
+email : <siriyaporn.r@kkumail.com>
+<br>
+<br>
 
 เกี่ยวกับ
 
