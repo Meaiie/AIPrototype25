@@ -61,7 +61,7 @@
 | **III** | 03/12/68 | Cloud Virtual machines | [`Lecture Class 3.md`](https://github.com/Meaiie/AIPrototype25/blob/main/Lecture%20Class%203.md) |
 | **IV** | 04/12/68 | Install Miniconda and Session | [`Lecture Class 4.md`](https://github.com/Meaiie/AIPrototype25/blob/main/Lecture%20Class%204.md) |
 | **V** | 11/12/68 | Environment Conda & GitHub CLI | [`Lecture Class 5.md`](https://github.com/Meaiie/AIPrototype25/blob/main/Lecture%20Class%205.md) |
-| **VI** | 25/12/68 | web & HTTP Methods | [`Lecture Class 6.md`](https://github.com/Meaiie/AIPrototype25/blob/main/Lecture%20Class%206.md) |
+| **VI** | 25/12/68 | Web & HTTP Methods | [`Lecture Class 6.md`](https://github.com/Meaiie/AIPrototype25/blob/main/Lecture%20Class%206.md) |
 | **VII** | --/--/-- | -- | [`Lecture Class 7.md`](--) |
 
 ---
