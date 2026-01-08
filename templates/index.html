@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iris Species Predictor</title>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -13,45 +13,50 @@
         <h2>🌸 Iris Classifier</h2>
         <p class="subtitle">Enter the flower measurements below</p>
 
-        <form method="POST">
-            <div class="form-group">
-                <label>Sepal Length (cm)</label>
-                <input type="number" step="0.1" name="sepal_length" placeholder="e.g. 5.1" required>
-            </div>
-            <div class="form-group">
-                <label>Sepal Width (cm)</label>
-                <input type="number" step="0.1" name="sepal_width" placeholder="e.g. 3.5" required>
-            </div>
-            <div class="form-group">
-                <label>Petal Length (cm)</label>
-                <input type="number" step="0.1" name="petal_length" placeholder="e.g. 1.4" required>
-            </div>
-            <div class="form-group">
-                <label>Petal Width (cm)</label>
-                <input type="number" step="0.1" name="petal_width" placeholder="e.g. 0.2" required>
+        <form id="prediction-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Sepal Length (cm)</label>
+                    <input type="number" step="0.1" id="sepal_length" placeholder="e.g. 5.1" required>
+                </div>
+                <div class="form-group">
+                    <label>Sepal Width (cm)</label>
+                    <input type="number" step="0.1" id="sepal_width" placeholder="e.g. 3.5" required>
+                </div>
             </div>
 
-            <button type="submit">Predict Species</button>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Petal Length (cm)</label>
+                    <input type="number" step="0.1" id="petal_length" placeholder="e.g. 1.4" required>
+                </div>
+                <div class="form-group">
+                    <label>Petal Width (cm)</label>
+                    <input type="number" step="0.1" id="petal_width" placeholder="e.g. 0.2" required>
+                </div>
+            </div>
+
+            <button type="submit" id="submit-btn">Predict Species</button>
         </form>
-
-        {% if prediction %}
-            {% if "Error" in prediction %}
-                <div class="error-box">
-                    <strong>⚠️ {{ prediction }}</strong>
-                </div>
-            {% else %}
-                <div class="result-box">
-                    <strong>✅ {{ prediction }}</strong>
-                    <br>
-                    <img src="{{ url_for('static', filename='images/' + prediction_name + '.jpg') }}" 
-                         alt="{{ prediction_name }}" 
-                         class="flower-img">
-                </div>
-            {% endif %}
-        {% endif %}
-
         <div class="footer">Powered by Scikit-Learn & Flask</div>
     </div>
+
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            
+            <h3 id="modal-title">🔮 กำลังร่ายคาถา...</h3>
+            <p id="modal-text">โอม... มะลึกกึ๊กกึ๋ยยย~ เพี้ยง!</p>
+            
+            <div id="result-image-container" style="display: none;">
+                <img id="result-img" src="" alt="Flower Result" class="flower-img">
+                <h2 id="final-result-name" style="color: #667eea; margin-top: 10px;"></h2>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+
 </body>
 </html>
