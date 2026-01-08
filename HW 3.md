@@ -1,14 +1,17 @@
 ## ✍️ Homework 3
 > ตกแต่งหน้าเว็บให้สวยงาม<br>
 <br>
-<p align="center">
-  <video
-    src="https://github.com/user-attachments/assets/3136965b-fadf-44dc-8995-b9424d0d8ddb"
-    width="100%"
+<div align="center">
+  <h3>🌸 Iris Classifier Demo </h3>
+  <video 
+    src="https://github.com/user-attachments/assets/3136965b-fadf-44dc-8995-b9424d0d8ddb" 
+    width="80%" 
     controls>
-    Your browser does not support the video tag.
   </video>
-</p>
+  
+  <br>
+
+</div>
 <br>
 <br>
 <img width="1328" height="831" alt="image" src="https://github.com/user-attachments/assets/cc149152-61a6-4e7d-bf26-3d6489bf4a10" />
