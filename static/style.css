@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 * {
     box-sizing: border-box;
@@ -8,129 +8,107 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    height: 100vh;
+    background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #333;
+    color: #4a5568;
+    padding: 20px; /* เพิ่ม padding กันชิดขอบจอมือถือ */
 }
 
 .container {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.90);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     width: 100%;
-    max-width: 450px;
+    max-width: 500px; /* ขยายให้กว้างขึ้นนิดหน่อย */
     text-align: center;
-    transition: transform 0.3s ease;
 }
 
-.container:hover {
-    transform: translateY(-5px);
-}
+h2 { color: #2d3748; font-weight: 600; margin-bottom: 10px;}
+p.subtitle { font-size: 0.9rem; color: #718096; margin-bottom: 30px; }
 
-h2 {
+/* --- จัด Layout 2 คอลัมน์ --- */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* แบ่งเป็น 2 ส่วนเท่ากัน */
+    gap: 20px; /* ระยะห่างระหว่างคอลัมน์ */
     margin-bottom: 20px;
-    color: #4a4a4a;
-    font-weight: 600;
-}
-
-p.subtitle {
-    font-size: 0.9em;
-    color: #666;
-    margin-bottom: 30px;
 }
 
 .form-group {
-    margin-bottom: 20px;
     text-align: left;
+    margin-bottom: 0; /* ลบ margin เดิมออกเพราะใช้ gap แทนแล้ว */
 }
+/* -------------------------- */
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 0.9em;
-    color: #555;
-    font-weight: 500;
-}
-
-input {
-    width: 100%;
-    padding: 12px 15px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    font-size: 1em;
-    transition: border-color 0.3s;
-    outline: none;
-}
-
-input:focus {
-    border-color: #764ba2;
-}
+label { display: block; margin-bottom: 8px; font-size: 0.85rem; color: #4a5568; font-weight: 500; margin-left: 5px;}
+input { width: 100%; padding: 12px 15px; background-color: #f8fafc; border: 2px solid transparent; border-radius: 12px; font-size: 0.95rem; color: #2d3748; transition: all 0.3s ease; outline: none;}
+input:focus { background-color: #fff; border-color: #667eea; box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);}
 
 button {
+    width: 100%; padding: 15px; margin-top: 10px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none; border-radius: 12px; color: white; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;
+}
+button:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -10px rgba(118, 75, 162, 0.5);}
+.footer { margin-top: 25px; font-size: 0.75rem; color: #a0aec0; }
+
+/* --- Modal Styles (หน้าต่าง Popup) --- */
+.modal {
+    display: none; /* ซ่อนไว้ก่อน */
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
     width: 100%;
-    padding: 14px;
-    background: linear-gradient(to right, #667eea, #764ba2);
-    border: none;
-    border-radius: 10px;
-    color: white;
-    font-size: 1.1em;
-    font-weight: 600;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* พื้นหลังสีดำโปร่งแสง */
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 24px;
+    text-align: center;
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    animation: zoomIn 0.3s ease; /* เอฟเฟกต์เด้งขึ้นมา */
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.8); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
     cursor: pointer;
-    transition: opacity 0.3s, transform 0.2s;
-    margin-top: 10px;
+    transition: color 0.2s;
 }
+.close-btn:hover { color: #667eea; }
 
-button:hover {
-    opacity: 0.9;
-    transform: scale(1.02);
-}
-
-.result-box {
-    margin-top: 25px;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: #d1fae5;
-    color: #065f46;
-    border: 1px solid #34d399;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-.error-box {
-    margin-top: 25px;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: #fee2e2;
-    color: #991b1b;
-    border: 1px solid #f87171;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.footer {
-    margin-top: 20px;
-    font-size: 0.8em;
-    color: #888;
-}
-
-/* เพิ่มต่อท้ายไฟล์ style.css */
 .flower-img {
-    margin-top: 15px;
-    width: 200px;        /* กำหนดความกว้าง */
-    height: 200px;       /* กำหนดความสูง */
-    object-fit: cover;   /* ตัดภาพให้พอดีกรอบโดยไม่บิดเบี้ยว */
-    border-radius: 15px; /* ทำขอบมน */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* ใส่เงาให้รูปดูลอยๆ */
-    border: 3px solid white;
-    transition: transform 0.3s ease;
+    margin-top: 20px;
+    width: 180px; height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
 }
-
-.flower-img:hover {
-    transform: scale(1.05); /* เมาส์ชี้แล้วขยายรูปนิดนึง */
-}
+/* -------------------------- */
