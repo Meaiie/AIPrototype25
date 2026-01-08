@@ -71,6 +71,6 @@
 | :---: | :---: | :---: | :---: |
 | **HW 1** | 03/12/68 | Copy file | [png](https://github.com/Meaiie/AIPrototype25/blob/main/HW1.png) |
 | **HW 2** | 23/12/68 | Update Lecture on GitHub |✅|
-| **HW 3** | 13/01/69 | fancy web app |✅|
+| **HW 3** | 13/01/69 | fancy web app |[HW3](https://github.com/Meaiie/AIPrototype25/blob/main/HW%203.md)|
 
 ---
