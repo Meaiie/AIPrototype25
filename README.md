@@ -62,7 +62,7 @@
 | **IV** | 04/12/68 | Install Miniconda and Session | [`Lecture Class 4.md`](https://github.com/Meaiie/AIPrototype25/blob/main/Lecture%20Class%204.md) |
 | **V** | 11/12/68 | Environment Conda & GitHub CLI | [`Lecture Class 5.md`](https://github.com/Meaiie/AIPrototype25/blob/main/Lecture%20Class%205.md) |
 | **VI** | 25/12/68 | Web & HTTP Methods | [`Lecture Class 6.md`](https://github.com/Meaiie/AIPrototype25/blob/main/Lecture%20Class%206.md) |
-| **VII** | --/--/-- | -- | [`Lecture Class 7.md`](--) |
+| **VII** | 07/01/69 | web service | [`Lecture Class 7.md`](https://github.com/Meaiie/AIPrototype25/blob/main/Lecture%20Class%207.md) |
 
 ---
 
@@ -70,6 +70,7 @@
 | Assignment | Due Date | Description | Link |
 | :---: | :---: | :---: | :---: |
 | **HW 1** | 03/12/68 | Copy file | [png](https://github.com/Meaiie/AIPrototype25/blob/main/HW1.png) |
-| **HW 2** | 20/12/68 | Update Lecture on GitHub |✅|
+| **HW 2** | 23/12/68 | Update Lecture on GitHub |✅|
+| **HW 3** | 13/01/69 | fancy web app |✅|
 
 ---
