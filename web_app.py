@@ -1,44 +1,47 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify # <-- เพิ่ม jsonify
 import numpy as np
 import joblib
 from sklearn.datasets import load_iris
 
 app = Flask(__name__)
 
-# Load the trained model
+# Load Model & Target Names
 model = joblib.load('iris_model.pkl')
-
-# Load target names (Setosa, Versicolor, Virginica) for readable output
 iris = load_iris()
 target_names = iris.target_names
 
-@app.route('/', methods=['GET', 'POST'])
+# หน้าแรกแสดง HTML ปกติ
+@app.route('/')
 def home():
-    prediction_text = ""
-    prediction_name = ""  # ตัวแปรสำหรับเก็บชื่อไฟล์รูป
-    
-    if request.method == 'POST':
-        try:
-            sl = float(request.form['sepal_length'])
-            sw = float(request.form['sepal_width'])
-            pl = float(request.form['petal_length'])
-            pw = float(request.form['petal_width'])
-            
-            input_data = np.array([[sl, sw, pl, pw]])
-            prediction = model.predict(input_data)[0]
-            
-            # ดึงชื่อสายพันธุ์ออกมา
-            # ชื่อใน target_names มักจะเป็น 'setosa', 'versicolor', 'virginica'
-            species_name = target_names[prediction]
-            
-            prediction_text = f"Class: {species_name.capitalize()}"
-            prediction_name = species_name  # ส่งชื่อไปใช้หานามสกุลไฟล์
-            
-        except Exception as e:
-            prediction_text = f"Error: {str(e)}"
+    return render_template('index.html')
 
-    # ส่งตัวแปร prediction_name ไปด้วย
-    return render_template('index.html', prediction=prediction_text, prediction_name=prediction_name)
+# API สำหรับรับค่าไปทำนายและส่ง JSON กลับ
+@app.route('/predict', methods=['POST'])
+def predict():
+    try:
+        # รับค่าจาก JavaScript (fetch)
+        data = request.get_json()
+        sl = float(data['sepal_length'])
+        sw = float(data['sepal_width'])
+        pl = float(data['petal_length'])
+        pw = float(data['petal_width'])
 
-if __name__ == "__main__":   # run code
-    app.run(host='localhost',debug=True,port=5002)#host='0.0.0.0' = run on internet ,port=5001
+        # Predict
+        input_data = np.array([[sl, sw, pl, pw]])
+        prediction_idx = model.predict(input_data)[0]
+        
+        # ดึงชื่อสายพันธุ์
+        prediction_name = target_names[prediction_idx]
+        
+        # ส่งข้อมูล JSON กลับไปให้ JavaScript
+        return jsonify({
+            'status': 'success',
+            'prediction_name': prediction_name,
+            'image_url': f"static/images/{prediction_name}.jpg"
+        })
+
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)})
+
+if __name__ == "__main__":
+    app.run(host='localhost', debug=True, port=5002)
