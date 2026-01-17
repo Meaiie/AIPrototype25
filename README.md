@@ -63,6 +63,8 @@
 | **V** | 11/12/68 | Environment Conda & GitHub CLI | [`Lecture Class 5.md`](https://github.com/Meaiie/AIPrototype25/blob/main/Lecture%20Class%205.md) |
 | **VI** | 25/12/68 | Web & HTTP Methods | [`Lecture Class 6.md`](https://github.com/Meaiie/AIPrototype25/blob/main/Lecture%20Class%206.md) |
 | **VII** | 07/01/69 | web service & Web app | [`Lecture Class 7.md`](https://github.com/Meaiie/AIPrototype25/blob/main/Lecture%20Class%207.md) |
+| **VIII** | 14/01/69 | Deploy Python Web App on Virtual Machine | [`Lecture Class 8.md`](https://github.com/Meaiie/AIPrototype25/blob/main/Lecture%20Class%208.md) |
+| **IX** | 15/01/69 | Basic AI & LLM | [`Lecture Class 9.md`](https://github.com/Meaiie/AIPrototype25/blob/main/Lecture%20Class%209.md) |
 
 ---
 
