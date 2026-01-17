@@ -1,4 +1,4 @@
-# Deploy Python Web App on Azure Virtual Machine
+# Deploy Python Web App on Virtual Machine
 
 ## 1. Connect to Virtual Machine
 เชื่อมต่อเข้า Virtual Machine
