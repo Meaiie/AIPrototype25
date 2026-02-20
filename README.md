@@ -30,7 +30,7 @@
 | Category | Link |
 | :--------:| :---: |
 | 🌐 **Webpage** | [View Project Website](https://punramon.github.io/Glumii/) |
-| 🚀 **Web App** | [View Web Application](--) |
+| 🚀 **Web App** | [View Web Application](https://meaiie.github.io/Glumii_webchat/) |
 
 ---
 
