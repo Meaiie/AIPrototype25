@@ -22,7 +22,7 @@
 
 ### 📅 Important Dates
 * 🚩 **Start Date:** 26/11/2025
-* 🏁 **Presentation Date:** --/--/2026
+* 🏁 **Presentation Date:** 11/03/2026
 
 ---
 
