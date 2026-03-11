@@ -43,16 +43,6 @@
 
 ---
 
-### 🔬 Research Topics (Semester 2)
-1. --
-2. --
-3. --
-4. --
-5. --
-6. --
-
----
-
 ### 📚 Lecture Schedule
 | Class | Date | Description | Lecture Note |
 | :---: | :---: | :---: | :---: |
